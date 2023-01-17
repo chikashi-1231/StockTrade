@@ -1,0 +1,7 @@
+db:
+    database: "postgresql"
+    user: "postgres"
+    password: "postgresql"
+    host: "localhost"
+    port: 5432
+    dbname: "stocktrade"
