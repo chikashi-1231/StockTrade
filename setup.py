@@ -5,6 +5,5 @@ setup(
     version='1.0',
     description='Pythonのディレクトリ構成のテスト用',
     author='Chikashi Suzuki',
-    author_email='underground.resources823@gmail.com',
-    url='https://github.com/koboriakira/python_package',
+    author_email='underground.resources823@gmail.com'
 )

@@ -1,10 +1,10 @@
 from enum import Enum
 
 
-"""
-市場コード
-"""
 class Exchange(Enum):
+    """
+    市場コード
+    """
     東証 = 1
     名証 = 3
     福証 = 5
@@ -13,10 +13,11 @@ class Exchange(Enum):
     日中 = 23
     夜間 = 24
 
-"""
-業種コード名
-"""
+
 class BisCategory(Enum):
+    """
+    業種コード名
+    """
     水産農林業 = 50
     鉱業 = 1050
     建設業 = 2050
