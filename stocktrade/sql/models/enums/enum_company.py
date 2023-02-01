@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class Exchange(Enum):
     """
     市場コード

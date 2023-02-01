@@ -4,11 +4,11 @@ from datetime import datetime
 import sys
 
 
-class Performance(Base):
+class CompanyPerformance(Base):
     """
     企業の業績
     """
-    __tablename__ = 't_board'
+    __tablename__ = 't_company_performance'
     # 銘柄コード
     SymbolID = Column(Integer, Sequence('symbol_id_seq'), primary_key=True)
     # 銘柄名
