@@ -5,3 +5,39 @@ db:
     host: "localhost"
     port: 5432
     dbname: "stocktrade"
+log:
+    formatters:
+        simple:
+            format: "{asctime} [PRD]({levelname:8}) {funcName:12}: {message}"
+            style: "{"
+    handlers:
+        consoleHandler:
+            class: logging.StreamHandler
+            level: DEBUG
+            formatter: simple
+            stream: ext://sys.stdout
+        fileHandler:
+            class: logging.FileHandler
+            level: INFO
+            formatter: simple
+            filename: './logs/production/stocktrade.log'
+            encoding: 'utf-8'
+        errorHandler:
+            class: logging.FileHandler
+            level: WARNING
+            formatter: simple
+            filename: './logs/production/stocktrade-error.log'
+            encoding: 'utf-8'
+    loggers:
+        defaultLogger:
+            level: INFO
+            handlers: [consoleHandler, fileHandler]
+            propagate: no
+        errorLogger:
+            level: WARNING
+            handlers: [consoleHandler, errorHandler]
+            propagate: no
+    root:
+        level: DEBUG
+        handlers: [consoleHandler]
+    disable_existing_loggers: False

@@ -125,3 +125,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# 個人情報(APIトークンなど)
+*personal_info.yaml

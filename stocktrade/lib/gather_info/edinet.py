@@ -9,11 +9,9 @@ def scode_edit(val):
  
  
 if __name__ == '__main__':
- 
- 
+
     # ＥＤＩＮＥＴコード,提出者名,証券コードを読み込む（合計3列）
-    df = pd.read_csv(FILE_PATH, encoding="cp932", usecols=[0, 6, 11],
-                     names=('edinet_code', 'name', 'syoken_code'), dtype={"syoken_code": str}, skiprows=2)
+    df = pd.read_csv(FILE_PATH, encoding="cp932", usecols=[0, 6, 11], names=('edinet_code', 'name', 'syoken_code'), dtype={"syoken_code": str}, skiprows=2)
  
     # 証券コードが欠損値（NaN）である行を削除
     df = df.dropna(how='any', axis=0)

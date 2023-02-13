@@ -1,10 +1,9 @@
-import logging
 from sql.models.models.stockmodel import *
 from sql.models.models.trademodel import *
 from sql.models.enums.enum_trade import *
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
-class AB_Sell_Stock(metaclass=ABCMeta):
+class AB_Sell_Stock(ABC):
     """
     株を売る抽象クラス
     """
@@ -18,7 +17,7 @@ class AB_Sell_Stock(metaclass=ABCMeta):
         # 保有している株の、現在価格を取得(API)
         pass
 
-    def deal(prof_loss: Enum, info: SellingStock) -> None:
+    def execute(prof_loss: Enum, info: SellingStock) -> None:
         pass
 
 class Dev_Sell(AB_Sell_Stock):
@@ -28,7 +27,7 @@ class Dev_Sell(AB_Sell_Stock):
     def __init__(self) -> None:
         pass
 
-    def deal(prof_loss: Enum, info: SellingStock):
+    def execute(prof_loss: Enum, info: SellingStock):
         # 売却用のAPIの実行は行わない
         # DBの更新
             # 売り注文(t_reserve_sell)のInsert
@@ -44,7 +43,7 @@ class Staging_Sell(AB_Sell_Stock):
     def __init__(self) -> None:
         pass
 
-    def deal(prof_loss: Enum, info: SellingStock):
+    def execute(prof_loss: Enum, info: SellingStock):
         # 売却用のAPIの実行は行わない
         # DBの更新
             # 売り注文(t_reserve_sell)のInsert
@@ -60,12 +59,10 @@ class Prod_Sell(AB_Sell_Stock):
     def __init__(self) -> None:
         pass
 
-    def deal(prof_loss: Enum, info: SellingStock):
+    def execute(prof_loss: Enum, info: SellingStock):
         # 売却用のAPIの実行
         # DBの更新
             # 売り注文(t_reserve_sell)のInsert
             # 売り約定(t_execute_sell)のInsertは行わない ※約定しなければ売却したことにならない為
         # ログの書き込み
         return
-
-
