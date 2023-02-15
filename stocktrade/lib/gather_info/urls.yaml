@@ -1,0 +1,19 @@
+jpx:
+    url: "https://www.jpx.co.jp/markets/statistics-equities/misc/01.html"
+    xpath: 
+        # 東証上場銘柄一覧のExcel
+        excel_url : "//div[@class='component-file']/@src"
+shikiho:
+    base_url: "https://shikiho.toyokeizai.net/stocks/"
+    xpath:
+        # 株価指標
+        stock_price_index:
+            # 時価総額
+            capitalization: "//div[@class='stock-index']/ul[@class='stock-index__list']/li[@class='stock-index__list__item']/span[@class='cap']/text()"
+            # 最低購入金額
+            # 売買単位
+            # 売買代金
+            # 売買代金(22日平均)
+        # 業績
+        company_performance:
+            # 売上高
