@@ -1,0 +1,5 @@
+# ここには、各APIのToken情報などを格納する。Gitにはアップしないようgitignoreにて設定を行う
+KabuCom:
+    API_Token: "input your token"
+LINE:
+    API_Token: "input your token"
